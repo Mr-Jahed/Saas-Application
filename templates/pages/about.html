@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | SaaSify{% endblock %}
+
+{% block content %}
+<section class="about-section bg-gradient-to-br from-blue-50 to-white py-16 rounded-2xl shadow-sm">
+  <div class="container mx-auto px-4">
+    <!-- Heading -->
+    <div class="text-center mb-10">
+      <h2 class="text-4xl font-extrabold text-gray-800 mb-3">About <span class="text-blue-600">SaaSify</span></h2>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+        We’re on a mission to empower businesses with simple, scalable, and smart SaaS solutions.  
+        Transforming ideas into innovation — one platform at a time.
+      </p>
+    </div>
+
+    <!-- About Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <!-- Image -->
+      <div class="flex justify-center">
+        <img src="{% static 'images/about-us.png' %}" alt="About SaaSify" 
+             class="rounded-2xl shadow-lg w-60 md:w-93 hover:scale-100 transition-transform duration-300" />
+      </div>
+
+      <!-- Text -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold text-gray-800">🚀 Who We Are</h3>
+        <p class="text-gray-600 leading-relaxed">
+          SaaSify is a leading SaaS-based company helping startups and enterprises scale faster with cloud-based solutions. 
+          We specialize in building highly responsive, user-friendly, and secure applications that simplify business processes 
+          and deliver real value to customers.
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-800">💡 What We Do</h3>
+        <ul class="space-y-3 text-gray-600">
+          <li class="flex items-start space-x-2">
+            <span class="text-blue-600 text-lg mt-1">✔</span>
+            <p>Develop modern, scalable web apps using cutting-edge technologies.</p>
+          </li>
+          <li class="flex items-start space-x-2">
+            <span class="text-blue-600 text-lg mt-1">✔</span>
+            <p>Empower businesses with cloud integration & automation tools.</p>
+          </li>
+          <li class="flex items-start space-x-2">
+            <span class="text-blue-600 text-lg mt-1">✔</span>
+            <p>Provide seamless user experiences with AI-driven design.</p>
+          </li>
+        </ul>
+
+        <h3 class="text-2xl font-bold text-gray-800">🌍 Our Vision</h3>
+        <p class="text-gray-600">
+          To become a global leader in SaaS innovation — enabling businesses to scale efficiently, sustainably, 
+          and intelligently through technology.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats / Highlights -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-16">
+      <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition">
+        <h4 class="text-3xl font-bold text-blue-600">10+</h4>
+        <p class="text-gray-600 mt-2 font-medium">Projects Delivered</p>
+      </div>
+      <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition">
+        <h4 class="text-3xl font-bold text-blue-600">8+</h4>
+        <p class="text-gray-600 mt-2 font-medium">Happy Clients</p>
+      </div>
+      <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition">
+        <h4 class="text-3xl font-bold text-blue-600">3+</h4>
+        <p class="text-gray-600 mt-2 font-medium">Years Experience</p>
+      </div>
+      <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition">
+        <h4 class="text-3xl font-bold text-blue-600">4+</h4>
+        <p class="text-gray-600 mt-2 font-medium">Tech Experts</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-4">Want to work with us?</h3>
+      <a href="{% url 'contact' %}" 
+         class="inline-block bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg hover:from-blue-700 hover:to-blue-800 transition duration-300">
+        Get in Touch 📩
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

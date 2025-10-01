@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Welcome | SaaS App{% endblock %}
+{% block content %}
+
+<!-- 🌟 Hero Section (Compact Version) -->
+<section class="text-center py-8 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+  <h1 class="text-2xl md:text-3xl font-extrabold mb-2">
+    Empower Your Business with Our SaaS Solution 🚀
+  </h1>
+  <p class="text-base md:text-lg mb-4">
+    Smart. Fast. Scalable. Everything you need to grow your business.
+  </p>
+  <div class="space-x-2">
+    <a href="{% url 'register' %}" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition">Get Started</a>
+    <a href="{% url 'login' %}" class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-700 transition">Login</a>
+  </div>
+  <img src="{% static 'images/hero.png' %}" alt="Dashboard" class="mx-auto mt-6 rounded-lg shadow-lg w-2/5 md:w-1/4">
+</section>
+
+
+
+<!-- 💡 Features Section -->
+<section class="py-16 bg-gray-50">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
+    <p class="text-gray-500 mt-2">A modern SaaS platform built for your success.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 max-w-6xl mx-auto">
+    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+      <img src="{% static 'images/feature1.png' %}" alt="Feature" class="h-16 mb-4 mx-auto">
+      <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+      <p class="text-gray-600">Gain insights into your business performance with real-time data.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+      <img src="{% static 'images/feature2.png' %}" alt="Feature" class="h-16 mb-4 mx-auto">
+      <h3 class="text-xl font-semibold mb-2">Automation Tools</h3>
+      <p class="text-gray-600">Save time by automating repetitive tasks and workflows.</p>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+      <img src="{% static 'images/feature3.png' %}" alt="Feature" class="h-16 mb-4 mx-auto">
+      <h3 class="text-xl font-semibold mb-2">Secure & Reliable</h3>
+      <p class="text-gray-600">Top-notch security and uptime so your data is always safe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 💰 Pricing Section -->
+<section class="py-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-gray-800">Simple Pricing</h2>
+    <p class="text-gray-500 mt-2">Choose a plan that suits your needs.</p>
+  </div>
+  <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+    <div class="bg-white p-8 rounded-lg shadow-md w-80 text-center">
+      <h3 class="text-xl font-semibold mb-2">Starter</h3>
+      <p class="text-4xl font-bold mb-4">$0 <span class="text-sm text-gray-500">/month</span></p>
+      <ul class="text-gray-600 mb-6 space-y-2">
+        <li>✔ Basic Features</li>
+        <li>✔ 1 User</li>
+        <li>✔ Community Support</li>
+      </ul>
+      <a href="{% url 'register' %}" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 transition">Start Free</a>
+    </div>
+    <div class="bg-yellow-400 p-8 rounded-lg shadow-lg w-80 text-center transform scale-105">
+      <h3 class="text-xl font-semibold mb-2">Pro</h3>
+      <p class="text-4xl font-bold mb-4">$19 <span class="text-sm text-gray-800">/month</span></p>
+      <ul class="text-gray-800 mb-6 space-y-2">
+        <li>✔ All Features</li>
+        <li>✔ 5 Users</li>
+        <li>✔ Priority Support</li>
+      </ul>
+      <a href="{% url 'register' %}" class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">Upgrade Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ❤️ Testimonials -->
+<section class="py-16 bg-gray-50">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-gray-800">What Our Users Say</h2>
+  </div>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 px-8">
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="text-gray-600 italic">"This SaaS platform changed the way we manage our business. Super easy to use!"</p>
+      <div class="mt-4 flex items-center">
+        <img src="{% static 'images/user1.png' %}" alt="User" class="w-10 h-10 rounded-full mr-3">
+        <span class="font-semibold text-gray-800">Sanket Jamdade</span>
+      </div>
+    </div>
+    <div class="bg-white p-6 rounded-lg shadow">
+      <p class="text-gray-600 italic">"Excellent customer service and reliable features. Highly recommend!"</p>
+      <div class="mt-4 flex items-center">
+        <img src="{% static 'images/user2.png' %}" alt="User" class="w-10 h-10 rounded-full mr-3">
+        <span class="font-semibold text-gray-800">Tejas Sakore</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 📞 Contact Section -->
+<section class="py-16 bg-blue-600 text-white text-center">
+  <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+  <p class="text-lg mb-8">Join thousands of happy customers using our platform.</p>
+  <a href="{% url 'register' %}" class="bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Sign Up Now</a>
+</section>
+
+{% endblock %}
