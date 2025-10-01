@@ -1,0 +1,313 @@
+/* 🌐 Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f5f7fb;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ✨ Glass Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+.logo img {
+  width: 35px;
+  margin-right: 6px;
+}
+
+/* 🌟 Improved Navbar Links */
+nav ul li a {
+  position: relative;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+  padding-bottom: 4px;
+}
+
+nav ul li a:hover {
+  color: #facc15; /* Yellow hover */
+}
+
+/* Underline Animation */
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #facc15;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Active link effect (optional highlight) */
+nav ul li a.active {
+  color: #facc15;
+}
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* Buttons */
+.btn-primary {
+  background: #007bff;
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+}
+
+/* 🌄 Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 45px 0;
+  background: linear-gradient(135deg, #e3f2fd, #f8f9fc);
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.hero-content span {
+  color: #007bff;
+}
+
+.hero-content p {
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+  color: #555;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-image img {
+  width: 200px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* 📦 Main Content */
+.main-content {
+  padding: 50px 0;
+}
+
+/* 📱 Responsive Hero */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-image img {
+    width: 160px;
+  }
+}
+
+/* 💎 Sections */
+.section {
+  padding: 50px 0;
+}
+
+.section h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.section p {
+  text-align: center;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 35px;
+}
+
+/* 👣 Footer */
+.footer {
+  background: #fff;
+  border-top: 1px solid #eee;
+  padding-top: 35px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding-bottom: 20px;
+}
+
+.footer-logo img {
+  width: 45px;
+}
+
+.footer-logo h3 {
+  color: #007bff;
+  margin: 8px 0;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+.footer-social .social-icons img {
+  width: 26px;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.footer-social .social-icons img:hover {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 12px 0;
+  border-top: 1px solid #eee;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ✨ Contact Page Enhancements */
+.contact-section {
+  animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ✨ About Page Enhancements */
+.about-section {
+  animation: fadeIn 0.9s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌟 Profile Section Styling */
+.profile-section {
+  animation: fadeInProfile 0.9s ease-in-out;
+}
+
+@keyframes fadeInProfile {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional glow effect for cards */
+.profile-section .bg-blue-50:hover {
+  background: linear-gradient(135deg, #e3f2ff, #ffffff);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* register.css */
+input:focus {
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+
+
