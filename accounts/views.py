@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from .forms import RegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout
 
 def signup(request):
     if request.method == 'POST':
@@ -17,7 +18,11 @@ def signup(request):
         form = RegisterForm()
     return render(request, 'accounts/signup.html', {'form': form})
 
-@login_required
+
+
+
+
+@login_required(login_url='login')
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
@@ -43,3 +48,8 @@ def register_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    request.session.flush()  # clear session fully
+    return redirect('login')

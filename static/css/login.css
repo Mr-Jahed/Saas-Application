@@ -1,0 +1,15 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+input {
+  transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+  transform: scale(1.01);
+}
+
+button:hover {
+  transform: scale(1.02);
+}

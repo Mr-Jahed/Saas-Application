@@ -4,6 +4,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
     <title>{% block title %}Mr Jahed-Hub{% endblock %}</title>
 
     <!-- Tailwind CSS CDN -->
@@ -12,7 +16,6 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
-
 
     <!-- Favicon -->
     <link rel="icon" href="{% static 'images/logo.png' %}" type="image/png" />
@@ -33,6 +36,7 @@
           <li><a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
           <li><a href="{% url 'about' %}" class="{% if request.path == '/about/' %}active{% endif %}">About</a></li>
           <li><a href="{% url 'contact' %}" class="{% if request.path == '/contact/' %}active{% endif %}">Contact</a></li>
+
           {% if user.is_authenticated %}
             <li><a href="{% url 'profile' %}" class="{% if request.path == '/profile/' %}active{% endif %}">Profile</a></li>
           {% endif %}
@@ -42,10 +46,19 @@
         <div class="flex items-center space-x-4">
           {% if user.is_authenticated %}
             <span class="text-white hidden md:inline">Hi, {{ user.username }}</span>
-            <a href="{% url 'logout' %}" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">Logout</a>
+            <a href="{% url 'logout' %}" 
+               class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">
+               Logout
+            </a>
           {% else %}
-            <a href="{% url 'login' %}" class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-100 transition">Login</a>
-            <a href="{% url 'register' %}" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">Sign Up</a>
+            <a href="{% url 'login' %}" 
+               class="bg-white text-blue-600 px-4 py-2 rounded hover:bg-gray-100 transition">
+               Login
+            </a>
+            <a href="{% url 'register' %}" 
+               class="bg-yellow-400 text-gray-800 px-4 py-2 rounded hover:bg-yellow-300 transition">
+               Sign Up
+            </a>
           {% endif %}
         </div>
       </nav>
@@ -83,7 +96,12 @@
           <a href="{% url 'home' %}" class="text-gray-300 hover:text-white transition">Home</a>
           <a href="{% url 'about' %}" class="text-gray-300 hover:text-white transition">About</a>
           <a href="{% url 'contact' %}" class="text-gray-300 hover:text-white transition">Contact</a>
-          <a href="{% url 'profile' %}" class="text-gray-300 hover:text-white transition">Profile</a>
+
+          {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}" class="text-gray-300 hover:text-white transition">Profile</a>
+          {% else %}
+            <a href="{% url 'login' %}" class="text-gray-300 hover:text-white transition">Login</a>
+          {% endif %}
         </div>
 
         <!-- Copyright -->
