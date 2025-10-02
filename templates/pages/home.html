@@ -1,108 +1,158 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Welcome | SaaS App{% endblock %}
+{% block title %}Home | SaaSify{% endblock %}
 {% block content %}
 
-<!-- 🌟 Hero Section (Compact Version) -->
-<section class="text-center py-8 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-  <h1 class="text-2xl md:text-3xl font-extrabold mb-2">
-    Empower Your Business with Our SaaS Solution 🚀
-  </h1>
-  <p class="text-base md:text-lg mb-4">
-    Smart. Fast. Scalable. Everything you need to grow your business.
-  </p>
-  <div class="space-x-2">
-    <a href="{% url 'register' %}" class="bg-yellow-400 text-gray-800 px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition">Get Started</a>
-    <a href="{% url 'login' %}" class="border border-white px-4 py-2 rounded-lg hover:bg-white hover:text-blue-700 transition">Login</a>
+<!-- 🌟 Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Empower Your Business with <span>SaaSify</span> 🚀</h1>
+    <p>Streamline operations, analyze data, and scale effortlessly with our all-in-one SaaS platform designed for startups and enterprises.</p>
+    <div class="hero-buttons">
+      <a href="{% url 'register' %}" class="btn-primary">Get Started</a>
+      <a href="{% url 'about' %}" class="btn-primary" style="background:#facc15; color:#222;">Learn More</a>
+    </div>
   </div>
-  <img src="{% static 'images/hero.png' %}" alt="Dashboard" class="mx-auto mt-6 rounded-lg shadow-lg w-2/5 md:w-1/4">
+  <div class="hero-image">
+    <img src="{% static 'images/hero.png' %}" alt="Dashboard">
+  </div>
 </section>
 
+<!-- 💡 Key Features -->
+<section class="section bg-gray-50">
+  <h2>Powerful Features</h2>
+  <p>Unlock the potential of your business with tools built for speed, security, and growth.</p>
 
-
-<!-- 💡 Features Section -->
-<section class="py-16 bg-gray-50">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold text-gray-800">Why Choose Us?</h2>
-    <p class="text-gray-500 mt-2">A modern SaaS platform built for your success.</p>
-  </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-8 max-w-6xl mx-auto">
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-      <img src="{% static 'images/feature1.png' %}" alt="Feature" class="h-16 mb-4 mx-auto">
-      <h3 class="text-xl font-semibold mb-2">Analytics Dashboard</h3>
-      <p class="text-gray-600">Gain insights into your business performance with real-time data.</p>
+  <div class="container grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+      <img src="{% static 'images/feature1.png' %}" alt="" class="w-14 mb-4 mx-auto">
+      <h3 class="text-lg font-semibold mb-2 text-center">Real-Time Analytics</h3>
+      <p class="text-gray-600 text-center">Make smarter decisions with live performance dashboards and insights.</p>
     </div>
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-      <img src="{% static 'images/feature2.png' %}" alt="Feature" class="h-16 mb-4 mx-auto">
-      <h3 class="text-xl font-semibold mb-2">Automation Tools</h3>
-      <p class="text-gray-600">Save time by automating repetitive tasks and workflows.</p>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+      <img src="{% static 'images/feature2.png' %}" alt="" class="w-14 mb-4 mx-auto">
+      <h3 class="text-lg font-semibold mb-2 text-center">Automation Tools</h3>
+      <p class="text-gray-600 text-center">Automate repetitive tasks and focus on what truly matters — innovation.</p>
     </div>
-    <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-      <img src="{% static 'images/feature3.png' %}" alt="Feature" class="h-16 mb-4 mx-auto">
-      <h3 class="text-xl font-semibold mb-2">Secure & Reliable</h3>
-      <p class="text-gray-600">Top-notch security and uptime so your data is always safe.</p>
+    <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg">
+      <img src="{% static 'images/feature3.png' %}" alt="" class="w-14 mb-4 mx-auto">
+      <h3 class="text-lg font-semibold mb-2 text-center">Bank-Grade Security</h3>
+      <p class="text-gray-600 text-center">Your data is encrypted, monitored, and protected 24/7.</p>
     </div>
   </div>
 </section>
 
-<!-- 💰 Pricing Section -->
-<section class="py-16">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold text-gray-800">Simple Pricing</h2>
-    <p class="text-gray-500 mt-2">Choose a plan that suits your needs.</p>
+<!-- 📈 Analytics Overview -->
+<section class="section">
+  <h2>See Everything in One Place</h2>
+  <p>Track user growth, engagement, and revenue trends with visual analytics tools.</p>
+  <div class="container text-center mt-6">
+    <img src="{% static 'images/analytics.png' %}" alt="Analytics Dashboard" class="rounded-lg shadow-lg w-half md:w-1/1.5 mx-auto">
   </div>
-  <div class="flex flex-col md:flex-row justify-center items-center gap-8">
-    <div class="bg-white p-8 rounded-lg shadow-md w-80 text-center">
+</section>
+
+<!-- ⚙️ Integrations -->
+<section class="section bg-gray-50">
+  <h2>Seamless Integrations</h2>
+  <p>Connect with your favorite tools and services in seconds.</p>
+
+  <div class="container grid grid-cols-2 md:grid-cols-5 gap-8 mt-10">
+    <img src="{% static 'images/integration1.png' %}" alt="Integration" class="mx-auto h-12">
+    <img src="{% static 'images/integration2.png' %}" alt="Integration" class="mx-auto h-12">
+    <img src="{% static 'images/integration3.png' %}" alt="Integration" class="mx-auto h-12">
+    <img src="{% static 'images/integration4.png' %}" alt="Integration" class="mx-auto h-12">
+    <img src="{% static 'images/integration5.png' %}" alt="Integration" class="mx-auto h-12">
+  </div>
+</section>
+
+<!-- 💰 Pricing Plans -->
+<section class="section">
+  <h2>Transparent Pricing</h2>
+  <p>No hidden charges. Scale as you grow.</p>
+
+  <div class="container flex flex-col md:flex-row justify-center gap-8 mt-10">
+    <div class="bg-white p-8 rounded-xl shadow-md w-80 text-center">
       <h3 class="text-xl font-semibold mb-2">Starter</h3>
-      <p class="text-4xl font-bold mb-4">$0 <span class="text-sm text-gray-500">/month</span></p>
+      <p class="text-4xl font-bold mb-4">$0<span class="text-sm text-gray-500">/mo</span></p>
       <ul class="text-gray-600 mb-6 space-y-2">
-        <li>✔ Basic Features</li>
-        <li>✔ 1 User</li>
+        <li>✔ 1 Project</li>
+        <li>✔ Basic Analytics</li>
         <li>✔ Community Support</li>
       </ul>
-      <a href="{% url 'register' %}" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-500 transition">Start Free</a>
+      <a href="{% url 'register' %}" class="btn-primary">Start Free</a>
     </div>
-    <div class="bg-yellow-400 p-8 rounded-lg shadow-lg w-80 text-center transform scale-105">
+
+    <div class="bg-yellow-400 p-8 rounded-xl shadow-lg w-80 text-center transform scale-105">
       <h3 class="text-xl font-semibold mb-2">Pro</h3>
-      <p class="text-4xl font-bold mb-4">$19 <span class="text-sm text-gray-800">/month</span></p>
+      <p class="text-4xl font-bold mb-4">$29<span class="text-sm text-gray-800">/mo</span></p>
       <ul class="text-gray-800 mb-6 space-y-2">
-        <li>✔ All Features</li>
-        <li>✔ 5 Users</li>
+        <li>✔ Unlimited Projects</li>
+        <li>✔ Advanced Analytics</li>
         <li>✔ Priority Support</li>
       </ul>
-      <a href="{% url 'register' %}" class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">Upgrade Now</a>
+      <a href="{% url 'register' %}" class="btn-primary" style="background:#222;">Upgrade</a>
+    </div>
+
+    <div class="bg-white p-8 rounded-xl shadow-md w-80 text-center">
+      <h3 class="text-xl font-semibold mb-2">Enterprise</h3>
+      <p class="text-4xl font-bold mb-4">Custom</p>
+      <ul class="text-gray-600 mb-6 space-y-2">
+        <li>✔ Dedicated Manager</li>
+        <li>✔ API Access</li>
+        <li>✔ 24/7 Premium Support</li>
+      </ul>
+      <a href="{% url 'contact' %}" class="btn-primary">Contact Sales</a>
     </div>
   </div>
 </section>
 
-<!-- ❤️ Testimonials -->
-<section class="py-16 bg-gray-50">
-  <div class="text-center mb-12">
-    <h2 class="text-3xl font-bold text-gray-800">What Our Users Say</h2>
-  </div>
-  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 px-8">
+<!-- 👨‍💻 Testimonials -->
+<section class="section bg-gray-50">
+  <h2>What Our Customers Say</h2>
+  <p>Trusted by professionals and teams worldwide.</p>
+  <div class="container grid md:grid-cols-2 gap-8 mt-10">
     <div class="bg-white p-6 rounded-lg shadow">
-      <p class="text-gray-600 italic">"This SaaS platform changed the way we manage our business. Super easy to use!"</p>
+      <p class="text-gray-600 italic">"SaaSify helped us double our productivity! The dashboard is intuitive and the team support is excellent."</p>
       <div class="mt-4 flex items-center">
-        <img src="{% static 'images/user1.png' %}" alt="User" class="w-10 h-10 rounded-full mr-3">
+        <img src="{% static 'images/user1.png' %}" alt="" class="w-10 h-10 rounded-full mr-3">
         <span class="font-semibold text-gray-800">Sanket Jamdade</span>
       </div>
     </div>
     <div class="bg-white p-6 rounded-lg shadow">
-      <p class="text-gray-600 italic">"Excellent customer service and reliable features. Highly recommend!"</p>
+      <p class="text-gray-600 italic">"The analytics are top-notch. I can finally see my entire business in one place!"</p>
       <div class="mt-4 flex items-center">
-        <img src="{% static 'images/user2.png' %}" alt="User" class="w-10 h-10 rounded-full mr-3">
+        <img src="{% static 'images/user2.png' %}" alt="" class="w-10 h-10 rounded-full mr-3">
         <span class="font-semibold text-gray-800">Tejas Sakore</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 📞 Contact Section -->
-<section class="py-16 bg-blue-600 text-white text-center">
-  <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-  <p class="text-lg mb-8">Join thousands of happy customers using our platform.</p>
-  <a href="{% url 'register' %}" class="bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Sign Up Now</a>
+<!-- 🧠 FAQ Section -->
+<section class="section">
+  <h2>Frequently Asked Questions</h2>
+  <p>Find answers to common questions before getting started.</p>
+  <div class="container mt-10 space-y-6">
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h4 class="font-semibold text-lg text-blue-600">💡 How do I get started?</h4>
+      <p class="text-gray-600 mt-2">Simply register your account, explore your dashboard, and start managing your projects instantly.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h4 class="font-semibold text-lg text-blue-600">💳 Can I upgrade or downgrade anytime?</h4>
+      <p class="text-gray-600 mt-2">Yes! You can switch plans or cancel your subscription at any time with no extra fees.</p>
+    </div>
+    <div class="bg-white p-4 rounded-lg shadow">
+      <h4 class="font-semibold text-lg text-blue-600">🔒 Is my data secure?</h4>
+      <p class="text-gray-600 mt-2">We use advanced encryption and follow strict compliance standards to ensure your data stays safe.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 📞 Call to Action -->
+<section class="section bg-blue-600 text-white text-center">
+  <h2>Start Growing Your Business Today!</h2>
+  <p class="mt-2 mb-6">Join 10,000+ businesses using SaaSify to scale smarter.</p>
+  <a href="{% url 'register' %}" class="btn-primary bg-yellow-400 text-gray-900">Sign Up Free</a>
 </section>
 
 {% endblock %}
