@@ -131,6 +131,16 @@ Copy code
 python manage.py runserver
 ➡️ Visit: http://127.0.0.1:8000/
 
+## Dockerize The Application
+## Just pull the Image from dockerhub and run command
+
+-- Created Dockerfile
+-- Created docker-compose file
+   ## Run cmd-
+      --docker-compose build --no-cache
+      --docker-compose up
+   
+
 🔐 Authentication Flow
 Default Route (/) → redirects to login page
 
